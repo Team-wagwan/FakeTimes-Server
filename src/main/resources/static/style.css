@@ -1,0 +1,13 @@
+.news-container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+.news-container img {
+    max-width: 100%;
+    height: auto;
+}
+.author {
+    font-style: italic;
+    color: gray;
+}

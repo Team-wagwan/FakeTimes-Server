@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${entity.title}">뉴스 기사</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="news-container">
+    <h1 th:text="${entity.title}"></h1>
+
+    <p class="news-meta">
+        <span th:text="'작성자: ' + ${entity.author}"></span> |
+        <span th:text="'조회수: ' + ${entity.read_count}"></span> |
+        <span th:text="'게시일: ' + ${entity.date}"></span>
+    </p>
+
+    <img th:src="${entity.image}" alt="뉴스 이미지">
+    <p th:text="${entity.description}"></p>
+</div>
+</body>
+</html>
