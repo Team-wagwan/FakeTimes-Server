@@ -2,6 +2,7 @@ package com.wagwan.faketimes.domain.kkangtong.service
 
 import com.wagwan.faketimes.domain.kkangtong.domain.entity.KkangtongEntity
 import com.wagwan.faketimes.domain.kkangtong.domain.repository.KkangtongJpaRepository
+import com.wagwan.faketimes.domain.kkangtong.dto.Kkangtong
 import com.wagwan.faketimes.domain.kkangtong.dto.request.ChatGPTRequest
 import com.wagwan.faketimes.domain.kkangtong.dto.response.ChatGPTResponse
 import com.wagwan.faketimes.domain.user.util.UserSecurity
@@ -118,8 +119,8 @@ class KkangtongService(
         return real.url!!
     }
 
-    fun getAllNews():List<KkangtongEntity>{
-        return repository.findAll()
+    fun getAllNews():List<Kkangtong>{
+        return repository.findAll().map { Kkangtong.toKkangtong(it) }
     }
 
 }
