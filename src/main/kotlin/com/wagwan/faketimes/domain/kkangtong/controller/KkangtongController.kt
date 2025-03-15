@@ -1,6 +1,7 @@
 package com.wagwan.faketimes.domain.kkangtong.controller
 
 import com.wagwan.faketimes.domain.kkangtong.domain.entity.KkangtongEntity
+import com.wagwan.faketimes.domain.kkangtong.dto.Kkangtong
 import com.wagwan.faketimes.domain.kkangtong.service.KkangtongService
 import com.wagwan.faketimes.global.common.dto.response.BaseResponseData
 import org.springframework.web.bind.annotation.GetMapping
@@ -26,7 +27,7 @@ class KkangtongController(
     }
 
     @GetMapping
-    fun getAll():BaseResponseData<List<KkangtongEntity>> {
+    fun getAll():BaseResponseData<List<Kkangtong>> {
         return BaseResponseData.ok(
             message = "조회 성공",
             data = service.getAllNews()
